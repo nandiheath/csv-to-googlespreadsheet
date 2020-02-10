@@ -25,7 +25,8 @@ const SPREADSHEET_ID = process.env.SPREADSHEET_ID
 
 // TODO: should have a script to export the crentials from env vars to file?
 const CREDENTIAL_JSON = process.env.CREDENTIAL_JSON
-const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIALS
+const GOOGLE_APPLICATION_CREDENTIALS = './tmp/credential.json'
+process.env.GOOGLE_APPLICATION_CREDENTIALS = GOOGLE_APPLICATION_CREDENTIALS
 
 mkdirp.sync(path.dirname(GOOGLE_APPLICATION_CREDENTIALS))
 fs.writeFileSync(GOOGLE_APPLICATION_CREDENTIALS, CREDENTIAL_JSON)
